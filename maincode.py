@@ -8,28 +8,28 @@
 
 import random
 
-def DisplayHelp():
-    print()
-    print('The aim of this game is to collect more than half of the seeds.')
-    print('In the game you will identify a pit to pick up the seeds from.')
-    print('These seeds are then dropped one by one into the following pits.')
-    print('If the pit into which the last seed is dropped now contains 2 or 3 seeds the player collects them.')
-    print('If the previous pit also has 2 or 3 seeds the player also collects these.')
-    print('The player continues collecting seeds whilst any previous pit has 2 or 3 seeds.')
+def DisplayHelp(): # Creates a function called DisplayHelp
+    print() # Prints a blank line
+    print('The aim of this game is to collect more than half of the seeds.') # Print the statement
+    print('In the game you will identify a pit to pick up the seeds from.') # Print the statement
+    print('These seeds are then dropped one by one into the following pits.') # Print the statement
+    print('If the pit into which the last seed is dropped now contains 2 or 3 seeds the player collects them.') # Print the statement
+    print('If the previous pit also has 2 or 3 seeds the player also collects these.') # Print the statement
+    print('The player continues collecting seeds whilst any previous pit has 2 or 3 seeds.') # Print the statement
     
-def CreateBoard(Seeds, PitCount):
-    global Board
-    for Count in range(PitCount):
-        Board.append(Seeds // PitCount)
+def CreateBoard(Seeds, PitCount): # Creates a fucntion called CreateBoard and has two arguments -  Seeds and PitCount
+    global Board # Calls in the the global variable Board (so taht it can be used inside the function)
+    for Count in range(PitCount): # FOR Loop wirth a range of the value in PitCount
+        Board.append(Seeds // PitCount) # Adds a value to the list(Board)
 
-def SetupBoard(TypeOfBoard, Seeds=0, PitCount=0):
-    global Board, State
-    if TypeOfBoard == 'T':
-        Board = [1, 0, 3, 1, 2, 2, 0, 0, 0, 0, 2, 1]
-        State = [48, 16, 20]
-    elif TypeOfBoard == 'S':
-        CreateBoard(Seeds, PitCount)
-        State = [Seeds, 0, 0]
+def SetupBoard(TypeOfBoard, Seeds=0, PitCount=0): # Creates a function called SetupBoard and has three arguments - TypeOfBoard, Seeds (which is = 0), PitCount (which is = 0)
+    global Board # Calls in global variable - Board
+    if TypeOfBoard == 'T': # IF Statement condition will be followed if TypeOfBoard = 'T'
+        Board = [1, 0, 3, 1, 2, 2, 0, 0, 0, 0, 2, 1] # The list Board will contain those values
+        State = [48, 16, 20] # The List State will contain these values
+    elif TypeOfBoard == 'S': # Another condition - if TypeOfBoard = 'S'
+        CreateBoard(Seeds, PitCount) # Calls funcion CreateBoard
+        State = [Seeds, 0, 0] # The List state contains these values
 
 def DisplayBoard():
     global Board, State

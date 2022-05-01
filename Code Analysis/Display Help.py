@@ -9,5 +9,6 @@ def DisplayHelp():
 
 # Analysis 
 '''
-
+# Defines this function as a DesplayHelp
+# prints statements to help user understand how the game works
 '''

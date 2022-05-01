@@ -5,5 +5,6 @@ def CreateBoard(Seeds, PitCount):
 
 # Analysis Below
 '''
-
+# Creates a function called CreateBoard
+# 
 '''
